@@ -1,6 +1,7 @@
 import { FaAngular, FaBrain, FaClock, FaDatabase, FaGithub, FaHandshake, FaLightbulb, FaLinkedin, FaMusic, FaNode, FaPeopleCarry, FaPhone, FaReact, FaRegEye, FaRegSmileBeam, FaTable, FaTachometerAlt } from 'react-icons/fa'
 import img from './img.png'
-import { IoLogoJavascript, IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
+import pdf from "./Vinicius-Carneiro-Gonçalves-2024.pdf"
+import { IoIosPaper, IoLogoJavascript, IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { MdOutlinePhp } from 'react-icons/md'
 import { FaPeopleGroup } from 'react-icons/fa6'
@@ -39,6 +40,7 @@ function Content() {
       description: "Experiência em SQL, Postregess e mais, com habilidade para escrever consultas. Conhecimento em bancos de dados relacionais."
     },
   ]
+
   const softSkills = [
     {
       icon: <FaBrain />,
@@ -139,17 +141,24 @@ function Content() {
   const contact = [
     {
       icon: <IoMdMail />,
-      description: "viniciuscgoncalves@hotmail.com"
+      description: "viniciuscgoncalves@hotmail.com",
+      link: undefined
     },
     {
       icon: <FaPhone />,
-      description: "(31) 985791710"
+      description: "(31) 985791710",
+      link: undefined
+    },
+    {
+      icon: <IoIosPaper />,
+      description: "clique para abrir meu currículo em pdf",
+      link: pdf
     },
   ]
-
+   
   return (
     <div className='flex flex-col gap-6'>
-      <div className='flex gap-6 justify-center items-center'>
+      <div id='home' className='flex gap-6 justify-center items-center'>
         <div>
           <span className='font-light'>Olá, meu nome é Vinicius,</span>
           <h1 className='font-extrabold text-7xl'>Full stack <br/> Developer</h1>
@@ -162,7 +171,7 @@ function Content() {
           <h1 id='about' className='font-extrabold text-3xl'>Sobre</h1>
           <hr className='w-full'/>
         </div>
-        <div className='flex justify-center text-center'>
+        <div className='flex py-10 justify-center text-center'>
           <p className='max-w-7xl'>Olá, meu nome é Vinicius Carneiro Gonçalves. Tenho 22 anos e estou cursando Análise e Desenvolvimento de Sistemas. 
           Sou um desenvolvedor full stack apaixonado por tecnologia e inovação. Tenho experiência na criação de APIs e na elaboração de interfaces 
           front-end sofisticadas. Acredito que a tecnologia tem o poder de transformar o mundo e estou sempre buscando novas maneiras de contribuir para isso. 
@@ -172,12 +181,12 @@ function Content() {
         </div>
       </div>
 
-      <div className='flex flex-col gap-8'>
+      <div className='flex gap-5 flex-col'>
         <div className='flex gap-5 justify-center items-center'>
           <h1 id='skills' className='font-extrabold text-3xl'>Habilidades</h1>
           <hr className='w-full'/>
         </div>
-        <div className='flex flex-col gap-7 justify-center text-center'>
+        <div className='flex py-6 flex-col gap-7 justify-center text-center'>
           <h2>Programmação:</h2>
           <div className='flex justify-center text-center'>
             {languages.map(item => 
@@ -188,7 +197,7 @@ function Content() {
             )}
           </div>
         </div>
-        <div className='flex flex-col gap-7 justify-center text-center'>
+        <div className='flex py-6 flex-col gap-7 justify-center text-center'>
           <h2>Habilidades interpessoais:</h2>
           <div className='flex justify-center text-center'>
             {softSkills.map(item => 
@@ -199,7 +208,7 @@ function Content() {
             )}
           </div>
         </div>
-        <div className='flex flex-col gap-7 justify-center text-center'>
+        <div className='flex py-6 flex-col gap-7 justify-center text-center'>
           <h2>Projetos:</h2>
           <div className='flex justify-center gap-10 text-center'>
             {projects.map(item => 
@@ -220,11 +229,11 @@ function Content() {
       </div>
 
       <div>
-        <div className='flex gap-5 justify-center items-center'>
+        <div className='flex justify-center items-center'>
           <h1 id='socialMedia' className='font-extrabold text-3xl'>Redes</h1>
           <hr className='w-full'/>
         </div>
-          <div className='flex gap-7 justify-center text-center'>
+          <div className='flex py-6 gap-7 justify-center text-center'>
             {socialMedia.map(item => 
               <a href={item.link} target='_blank'>
                 <div className='flex flex-col items-center'>
@@ -237,16 +246,18 @@ function Content() {
       </div>
 
       <div>
-        <div className='flex gap-5 justify-center items-center'>
+        <div className='flex justify-center items-center'>
           <h1 id='contact' className='font-extrabold text-3xl'>Contatos</h1>
           <hr className='w-full'/>
         </div>
-          <div className='flex gap-7 h-44 items-center justify-center text-center'>
+          <div className='flex py-6 gap-7 items-center justify-center text-center'>
             {contact.map(item => 
-              <div className='flex gap-4 flex-col items-center'>
-                <span className='text-6xl'>{item.icon}</span>
-                <p className='font-extralight text-xs'>{item.description}</p>
-              </div>
+              <a href={item.link} target='_blank'>
+                <div className='flex gap-4 flex-col items-center'>
+                    <span className='text-6xl'>{item.icon}</span>
+                    <p className='font-extralight text-xs'>{item.description}</p>
+                </div>
+              </a> 
             )}
           </div>
       </div>

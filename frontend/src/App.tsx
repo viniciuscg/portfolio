@@ -6,9 +6,9 @@ function App() {
   return (
     <div className='flex scroll-smooth flex-col min-h-screen gap-11 bg-neutral-900 px-20 text-gray-100'>
       <header>
+        <div className="min-h-[100px]"/>
         <Header />
       </header>
-
       <main>
         <section>
           <Content/>
