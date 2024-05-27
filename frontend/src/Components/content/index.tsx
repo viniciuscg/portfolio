@@ -158,7 +158,7 @@ function Content() {
    
   return (
     <div className='flex flex-col gap-6'>
-      <div id='home' className='flex gap-6 justify-center items-center'>
+      <div id='home' className='flex max-lg:flex-col gap-6 justify-center items-center'>
         <div>
           <span className='font-light'>Olá, meu nome é Vinicius,</span>
           <h1 className='font-extrabold text-7xl'>Full stack <br/> Developer</h1>
@@ -181,68 +181,71 @@ function Content() {
         </div>
       </div>
 
-      <div className='flex gap-5 flex-col'>
+      <div className='flex flex-col'>
         <div className='flex gap-5 justify-center items-center'>
           <h1 id='skills' className='font-extrabold text-3xl'>Habilidades</h1>
           <hr className='w-full'/>
         </div>
-        <div className='flex py-6 flex-col gap-7 justify-center text-center'>
-          <h2>Programmação:</h2>
-          <div className='flex justify-center text-center'>
-            {languages.map(item => 
-              <div className='flex flex-col items-center'>
-                <span className='text-6xl'>{item.icon}</span>
-                <p>{item.description}</p>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className='flex py-6 flex-col gap-7 justify-center text-center'>
-          <h2>Habilidades interpessoais:</h2>
-          <div className='flex justify-center text-center'>
-            {softSkills.map(item => 
-              <div className='flex flex-col items-center'>
-                <span className='text-6xl'>{item.icon}</span>
-                <p>{item.description}</p>
-              </div>
-            )}
-          </div>
-        </div>
-        <div className='flex py-6 flex-col gap-7 justify-center text-center'>
-          <h2>Projetos:</h2>
-          <div className='flex justify-center gap-10 text-center'>
-            {projects.map(item => 
-              <a href={item.link} target='_blank'>
+        <div className='py-10 flex flex-col gap-20'>
+          <div className='flex gap-10 flex-col items-center'>
+            <h2 className='text-xl'>Programação:</h2>
+            <div className='grid gap-6 text-center md:grid-cols-2 lg:grid-cols-4'>
+              {languages.map(item => (
                 <div className='flex flex-col items-center'>
                   <span className='text-6xl'>{item.icon}</span>
-                  <div className='flex gap-3'>
-                    {item.tecnologies.map(item => 
-                      <p className='text-xl'>{item}</p>
-                    )}
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='flex gap-5 flex-col items-center'>
+            <h2 className='text-xl'>Habilidades interpessoais:</h2>
+            <div className='grid gap-6 md:grid-cols-2 text-center lg:grid-cols-4'>
+              {softSkills.map(item => (
+                <div className='flex flex-col items-center'>
+                  <span className='text-6xl'>{item.icon}</span>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='flex gap-5 flex-col items-center'>
+            <h2 className='text-xl'>Projetos:</h2>
+            <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
+              {projects.map(item => (
+                <a href={item.link} target='_blank'>
+                  <div className='flex flex-col items-center'>
+                    <span className='text-6xl'>{item.icon}</span>
+                    <div className='flex gap-3'>
+                      {item.tecnologies.map(tech => (
+                        <p className='text-xl'>{tech}</p>
+                      ))}
+                    </div>
+                    <p className='font-extralight text-xs'>Clique para ser redirecionado</p>
                   </div>
-                  <p className='font-extralight text-xs'>clique para ser redirecionado</p>
-                </div>
-              </a>
-            )}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-
-      <div>
-        <div className='flex justify-center items-center'>
-          <h1 id='socialMedia' className='font-extrabold text-3xl'>Redes</h1>
-          <hr className='w-full'/>
-        </div>
-          <div className='flex py-6 gap-7 justify-center text-center'>
-            {socialMedia.map(item => 
-              <a href={item.link} target='_blank'>
-                <div className='flex flex-col items-center'>
-                  <span className='text-6xl'>{item.icon}</span>
-                  <p className='font-extralight text-xs'>clique para ser redirecionado</p>
-                </div>
-              </a>
-            )}
+        <div>
+          <div className='flex justify-center items-center'>
+            <h1 id='socialMedia' className='font-extrabold text-3xl'>Redes</h1>
+            <hr className='w-full'/>
           </div>
+          <div className='flex gap-5 flex-col items-center'>
+            <div className='grid gap-6 py-10 md:grid-cols-2 lg:grid-cols-4'>
+              {socialMedia.map(item => (
+                <a href={item.link} target='_blank'>
+                  <div className='flex flex-col items-center'>
+                    <span className='text-6xl'>{item.icon}</span>
+                    <p className='font-extralight text-xs'>Clique para ser redirecionado</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -250,16 +253,18 @@ function Content() {
           <h1 id='contact' className='font-extrabold text-3xl'>Contatos</h1>
           <hr className='w-full'/>
         </div>
-          <div className='flex py-6 gap-7 items-center justify-center text-center'>
-            {contact.map(item => 
+        <div className='flex gap-5 flex-col items-center'>
+          <div className='grid gap-6 py-10 md:grid-cols-2 lg:grid-cols-3'>
+            {contact.map(item => (
               <a href={item.link} target='_blank'>
-                <div className='flex gap-4 flex-col items-center'>
-                    <span className='text-6xl'>{item.icon}</span>
-                    <p className='font-extralight text-xs'>{item.description}</p>
+                <div className='flex flex-col items-center'>
+                  <span className='text-6xl'>{item.icon}</span>
+                  <p className='font-extralight text-xs'>{item.description}</p>
                 </div>
-              </a> 
-            )}
+              </a>
+            ))}
           </div>
+        </div>
       </div>
     </div>
   )
