@@ -161,9 +161,9 @@ function Content() {
       <div id='home' className='flex max-lg:flex-col gap-6 justify-center items-center'>
         <div>
           <span className='font-light'>Olá, meu nome é Vinicius,</span>
-          <h1 className='font-extrabold text-7xl'>Full stack <br/> Developer</h1>
+          <h1 className='font-extrabold max-lg:text-6xl text-7xl'>Full stack <br/> Developer</h1>
         </div>
-        <img className='max-w-[400px] rounded-lg' src={img} />
+        <img className='max-w-[400px] max-lg:w-[300px] rounded-lg' src={img} />
       </div>
 
       <div>
