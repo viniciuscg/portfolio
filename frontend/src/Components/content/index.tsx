@@ -7,6 +7,7 @@ import { MdOutlinePhp } from 'react-icons/md'
 import { FaPeopleGroup } from 'react-icons/fa6'
 import { TbSql } from 'react-icons/tb'
 import { TiSocialInstagram } from 'react-icons/ti'
+import logo from './4mti_logo.png'
 
 function Content() {
 
@@ -155,7 +156,15 @@ function Content() {
       link: pdf
     },
   ]
-   
+  
+  const experience = [
+    {
+      icon: <img src={logo} />,
+      level: "4MTI",
+      description: "Desenvolvedor PHP, SQL. Responsavel por criar codigo para coleta de dados em php, Aquisição de informações de arquivos (HTML, JSON, PDF, entre outros) Gerenciamento de banco de dados SQL",
+    },
+  ]
+
   return (
     <div className='flex flex-col gap-6'>
       <div id='home' className='flex max-lg:flex-col gap-6 justify-center items-center'>
@@ -178,6 +187,24 @@ function Content() {
           Estou constantemente aprendendo e aprimorando minhas habilidades para me manter atualizado com as últimas tendências e tecnologias. 
           Adoro os desafios que a programação apresenta e a satisfação de resolver problemas complexos. Estou ansioso para continuar minha jornada 
           no mundo da tecnologia e ver onde ela me levará.</p>
+        </div>
+      </div>
+
+      <div>
+        <div className='flex justify-center items-center'>
+          <h1 id='experience' className='font-extrabold text-3xl'>Experiência</h1>
+          <hr className='w-full'/>
+        </div>
+        <div className='flex gap-5 flex-col items-center'>
+          <div className='grid gap-6 py-10 md:grid-cols-2 lg:grid-cols-3'>
+            {experience.map(item => (
+              <div className='flex flex-col gap-2 text-center items-center'>
+                <span className='w-24'>{item.icon}</span>
+                <p>{item.level}</p>
+                <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

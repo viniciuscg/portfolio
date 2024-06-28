@@ -9,6 +9,7 @@ function Header() {
           <a href="#about"><h2>Sobre</h2></a>
           <a href="#skills"><h2>Habilidades</h2></a>
           <a href="#contact"><h2>Contato</h2></a>
+          <a href="#experience"><h2>Experiência</h2></a>
         </div>
         <div className="font-bold flex justify-end text-3xl max-lg:flex-grow-1 max-lg:justify-center min-w-[200px] items-end"><FaCode/></div>
       </div>
