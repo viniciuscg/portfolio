@@ -1,6 +1,6 @@
 import { FaAngular, FaBrain, FaClock, FaDatabase, FaGithub, FaHandshake, FaLightbulb, FaLinkedin, FaMusic, FaNode, FaPeopleCarry, FaPhone, FaReact, FaRegEye, FaRegSmileBeam, FaTable, FaTachometerAlt } from 'react-icons/fa'
 import img from './img.png'
-import pdf from "./Vinicius-Carneiro-Gonçalves-2024.pdf"
+import pdf from "./Vinicius_Carneiro_Gonçalves_-_Desenvolvedor_-_Resume.pdf"
 import { IoIosPaper, IoLogoJavascript, IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { MdOutlinePhp } from 'react-icons/md'
@@ -87,7 +87,8 @@ function Content() {
         <IoLogoJavascript />,
         <BiLogoTypescript />,
         <FaDatabase />
-      ]
+      ],
+      name: 'Forum'
     },
     {
       icon: <FaMusic />,
@@ -98,14 +99,16 @@ function Content() {
         <IoLogoJavascript />,
         <BiLogoTypescript />,
         <FaDatabase />
-      ]
+      ],
+      name: 'AngelsMusic'
     },
     {
       icon: <TbSql />,
       link: "https://github.com/viniciuscg/SQL-BeeCrowd",
       tecnologies: [
         <FaDatabase />
-      ]
+      ],
+      name: 'SQL-BeeCrowd'
     },
     {
       icon: <FaTable />,
@@ -116,7 +119,8 @@ function Content() {
         <IoLogoJavascript />,
         <MdOutlinePhp />,
         <FaDatabase />
-      ]
+      ],
+      name: 'Codificar Project'
     },
   ]
 
@@ -172,7 +176,7 @@ function Content() {
           <span className='font-light'>Olá, meu nome é Vinicius,</span>
           <h1 className='font-extrabold max-lg:text-6xl text-7xl'>Full stack <br/> Developer</h1>
         </div>
-        <img className='max-w-[400px] max-lg:w-[300px] rounded-lg' src={img} />
+        <img className='max-w-[700px] max-lg:w-[300px] rounded-lg' src={img} />
       </div>
 
       <div>
@@ -199,7 +203,7 @@ function Content() {
           <div className='grid gap-6 py-10 md:grid-cols-2 lg:grid-cols-3'>
             {experience.map(item => (
               <div className='flex flex-col gap-2 text-center items-center'>
-                <span className='w-24'>{item.icon}</span>
+                <span className='p-3 w-24'>{item.icon}</span>
                 <p>{item.level}</p>
                 <p>{item.description}</p>
               </div>
@@ -219,7 +223,7 @@ function Content() {
             <div className='grid gap-6 text-center md:grid-cols-2 lg:grid-cols-4'>
               {languages.map(item => (
                 <div className='flex flex-col items-center'>
-                  <span className='text-6xl'>{item.icon}</span>
+                  <span className='p-3 text-6xl'>{item.icon}</span>
                   <p>{item.description}</p>
                 </div>
               ))}
@@ -230,7 +234,7 @@ function Content() {
             <div className='grid gap-6 md:grid-cols-2 text-center lg:grid-cols-4'>
               {softSkills.map(item => (
                 <div className='flex flex-col items-center'>
-                  <span className='text-6xl'>{item.icon}</span>
+                  <span className='p-3 text-6xl'>{item.icon}</span>
                   <p>{item.description}</p>
                 </div>
               ))}
@@ -241,14 +245,14 @@ function Content() {
             <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
               {projects.map(item => (
                 <a href={item.link} target='_blank'>
-                  <div className='flex flex-col items-center'>
+                  <div className='flex flex-col items-center gap-2'>
+                    <span>{item.name}</span>
                     <span className='text-6xl'>{item.icon}</span>
                     <div className='flex gap-3'>
                       {item.tecnologies.map(tech => (
                         <p className='text-xl'>{tech}</p>
                       ))}
                     </div>
-                    <p className='font-extralight text-xs'>Clique para ser redirecionado</p>
                   </div>
                 </a>
               ))}
@@ -264,7 +268,7 @@ function Content() {
             <div className='grid gap-6 py-10 md:grid-cols-2 lg:grid-cols-4'>
               {socialMedia.map(item => (
                 <a href={item.link} target='_blank'>
-                  <div className='flex flex-col items-center'>
+                  <div className='flex flex-col items-center gap-2'>
                     <span className='text-6xl'>{item.icon}</span>
                     <p className='font-extralight text-xs'>Clique para ser redirecionado</p>
                   </div>
@@ -284,7 +288,7 @@ function Content() {
           <div className='grid gap-6 py-10 md:grid-cols-2 lg:grid-cols-3'>
             {contact.map(item => (
               <a href={item.link} target='_blank'>
-                <div className='flex flex-col items-center'>
+                <div className='flex flex-col gap-2 items-center'>
                   <span className='text-6xl'>{item.icon}</span>
                   <p className='font-extralight text-xs'>{item.description}</p>
                 </div>
