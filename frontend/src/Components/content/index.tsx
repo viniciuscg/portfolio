@@ -1,11 +1,9 @@
-import { FaAngular, FaBrain, FaClock, FaDatabase, FaGithub, FaHandshake, FaLightbulb, FaLinkedin, FaMusic, FaNode, FaPeopleCarry, FaPhone, FaReact, FaRegEye, FaRegSmileBeam, FaTable, FaTachometerAlt } from 'react-icons/fa'
+import { FaBrain, FaChartLine, FaCogs, FaDatabase, FaGithub, FaHandshake, FaLightbulb, FaLinkedin, FaNode, FaPhone, FaProjectDiagram, FaReact, FaTools, FaUsers } from 'react-icons/fa'
 import img from './img.png'
-import pdf from "./Vinicius_Carneiro_Gonçalves_-_Desenvolvedor_-_Resume.pdf"
-import { IoIosPaper, IoLogoJavascript, IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
+import pdf from "./Vinicius-Carneiro-Gonçalves-2024.pdf"
+import { IoIosPaper, IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { MdOutlinePhp } from 'react-icons/md'
-import { FaPeopleGroup } from 'react-icons/fa6'
-import { TbSql } from 'react-icons/tb'
 import { TiSocialInstagram } from 'react-icons/ti'
 import logo from './4mti_logo.png'
 
@@ -21,20 +19,12 @@ function Content() {
       description: "Capacidade de construir uma API, boa logica, conhecimento em principios como SOLID, CLEAN CODE, KISS e DRY."
     },
     {
-      icon: <IoLogoJavascript />,
-      description: "Proficiência em JavaScript, incluindo o entendimento de conceitos como closures, protótipos, async/await, e ES6+ features."
-    },
-    {
       icon: <BiLogoTypescript />,
       description: "Habilidade para escrever código TypeScript seguro e eficiente, com um bom entendimento de tipos, interfaces e decorators."
     },
     {
       icon: <MdOutlinePhp />,
       description: "Experiência em desenvolver aplicações web robustas usando PHP, com um forte entendimento de conceitos como OOP, MVC e PSR standards."
-    },
-    {
-      icon: <FaAngular />,
-      description: "Conhecimento em Angular para construir aplicações SPA eficientes, com experiência em RxJS, decorators, e Angular CLI."
     },
     {
       icon: <FaDatabase />,
@@ -45,84 +35,37 @@ function Content() {
   const softSkills = [
     {
       icon: <FaBrain />,
-      description: "Habilidade para analisar problemas complexos e implementar soluções eficientes."
+      description: "Habilidade para analisar problemas complexos e desenvolver soluções inovadoras e eficientes."
     },
     {
-      icon: <FaPeopleCarry />,
-      description: "Capacidade de trabalhar efetivamente em um ambiente de equipe e colaborar com os outros."
-    },
-    {
-      icon: <FaRegSmileBeam />,
-      description: "Habilidade para comunicar ideias de forma clara e eficaz, tanto verbalmente quanto por escrito."
-    },
-    {
-      icon: <FaTachometerAlt />,
-      description: "Capacidade de se adaptar a novas tecnologias, linguagens e metodologias de desenvolvimento."
-    },
-    {
-      icon: <FaClock />,
-      description: "Habilidade para gerenciar efetivamente o tempo e priorizar tarefas."
-    },
-    {
-      icon: <FaLightbulb />,
-      description: "Disposição para aprender novas habilidades e se manter atualizado com as últimas tendências e tecnologias."
+      icon: <FaCogs />,
+      description: "Capacidade de criar novas features e aprimorar funcionalidades existentes, alinhando-se às necessidades do cliente."
     },
     {
       icon: <FaHandshake />,
-      description: "Capacidade de entender e compartilhar os sentimentos dos outros, especialmente ao trabalhar em equipe ou ao lidar com clientes."
+      description: "Forte compreensão das necessidades dos clientes, adquirida através de um envolvimento direto em projetos desafiadores."
     },
     {
-      icon: <FaRegEye />,
-      description: "Habilidade para identificar erros ou inconsistências no código e garantir a qualidade do software."
-    },
-  ]
-  
-  const projects = [
-    {
-      icon: <FaPeopleGroup />,
-      link: "https://github.com/viniciuscg/forum",
-      tecnologies: [
-        <FaReact />,
-        <FaNode />,
-        <IoLogoJavascript />,
-        <BiLogoTypescript />,
-        <FaDatabase />
-      ],
-      name: 'Forum'
+      icon: <FaChartLine />,
+      description: "Compromisso com a inovação e capacidade de adaptar-se rapidamente a novas tecnologias e metodologias."
     },
     {
-      icon: <FaMusic />,
-      link: "https://github.com/viniciuscg/AngelsMusic",
-      tecnologies: [
-        <FaReact />,
-        <FaNode />,
-        <IoLogoJavascript />,
-        <BiLogoTypescript />,
-        <FaDatabase />
-      ],
-      name: 'AngelsMusic'
+      icon: <FaProjectDiagram />,
+      description: "Facilidade em gerenciar projetos complexos, entregando soluções escaláveis que atendem a requisitos técnicos e de negócios."
     },
     {
-      icon: <TbSql />,
-      link: "https://github.com/viniciuscg/SQL-BeeCrowd",
-      tecnologies: [
-        <FaDatabase />
-      ],
-      name: 'SQL-BeeCrowd'
+      icon: <FaTools />,
+      description: "Habilidade em identificar e resolver problemas técnicos, garantindo a qualidade e eficiência do software."
     },
     {
-      icon: <FaTable />,
-      link: "https://github.com/viniciuscg/codificar-project",
-      tecnologies: [
-        <FaReact />,
-        <FaNode />,
-        <IoLogoJavascript />,
-        <MdOutlinePhp />,
-        <FaDatabase />
-      ],
-      name: 'Codificar Project'
+      icon: <FaLightbulb />,
+      description: "Disposição contínua para aprender e evoluir, mantendo-se atualizado com as últimas tendências tecnológicas."
     },
-  ]
+    {
+      icon: <FaUsers />,
+      description: "Capacidade de colaborar efetivamente em equipe e promover um ambiente de trabalho produtivo."
+    }
+  ];
 
   const socialMedia = [
     {
@@ -237,24 +180,6 @@ function Content() {
                   <span className='p-3 text-6xl'>{item.icon}</span>
                   <p>{item.description}</p>
                 </div>
-              ))}
-            </div>
-          </div>
-          <div className='flex gap-5 flex-col items-center'>
-            <h2 className='text-xl'>Projetos:</h2>
-            <div className='grid gap-6 md:grid-cols-2 lg:grid-cols-4'>
-              {projects.map(item => (
-                <a href={item.link} target='_blank'>
-                  <div className='flex flex-col items-center gap-2'>
-                    <span>{item.name}</span>
-                    <span className='text-6xl'>{item.icon}</span>
-                    <div className='flex gap-3'>
-                      {item.tecnologies.map(tech => (
-                        <p className='text-xl'>{tech}</p>
-                      ))}
-                    </div>
-                  </div>
-                </a>
               ))}
             </div>
           </div>
