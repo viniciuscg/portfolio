@@ -1,71 +1,15 @@
 import { FaBrain, FaChartLine, FaCogs, FaDatabase, FaGithub, FaHandshake, FaLightbulb, FaLinkedin, FaNode, FaPhone, FaProjectDiagram, FaReact, FaTools, FaUsers } from 'react-icons/fa'
 import img from './img.png'
-import pdf from "./Vinicius-Carneiro-Gonçalves-2024.pdf"
+import pdf from "./Vinicius-Carneiro-Gonçalves-Developer.pdf"
 import { IoIosPaper, IoLogoWhatsapp, IoMdMail } from 'react-icons/io'
 import { BiLogoTypescript } from 'react-icons/bi'
 import { MdOutlinePhp } from 'react-icons/md'
 import { TiSocialInstagram } from 'react-icons/ti'
 import logo from './4mti_logo.png'
+import { useTranslation } from 'react-i18next'
 
 function Content() {
-
-  const languages = [
-    {
-      icon: <FaReact />,
-      description: "Conhecimento desde fazer boa utilização de componentes reutilizáveis, context com seus estados globais, hooks, router e etc..."
-    },
-    {
-      icon: <FaNode />,
-      description: "Capacidade de construir uma API, boa logica, conhecimento em principios como SOLID, CLEAN CODE, KISS e DRY."
-    },
-    {
-      icon: <BiLogoTypescript />,
-      description: "Habilidade para escrever código TypeScript seguro e eficiente, com um bom entendimento de tipos, interfaces e decorators."
-    },
-    {
-      icon: <MdOutlinePhp />,
-      description: "Experiência em desenvolver aplicações web robustas usando PHP, com um forte entendimento de conceitos como OOP, MVC e PSR standards."
-    },
-    {
-      icon: <FaDatabase />,
-      description: "Experiência em SQL, Postregess e mais, com habilidade para escrever consultas. Conhecimento em bancos de dados relacionais."
-    },
-  ]
-
-  const softSkills = [
-    {
-      icon: <FaBrain />,
-      description: "Habilidade para analisar problemas complexos e desenvolver soluções inovadoras e eficientes."
-    },
-    {
-      icon: <FaCogs />,
-      description: "Capacidade de criar novas features e aprimorar funcionalidades existentes, alinhando-se às necessidades do cliente."
-    },
-    {
-      icon: <FaHandshake />,
-      description: "Forte compreensão das necessidades dos clientes, adquirida através de um envolvimento direto em projetos desafiadores."
-    },
-    {
-      icon: <FaChartLine />,
-      description: "Compromisso com a inovação e capacidade de adaptar-se rapidamente a novas tecnologias e metodologias."
-    },
-    {
-      icon: <FaProjectDiagram />,
-      description: "Facilidade em gerenciar projetos complexos, entregando soluções escaláveis que atendem a requisitos técnicos e de negócios."
-    },
-    {
-      icon: <FaTools />,
-      description: "Habilidade em identificar e resolver problemas técnicos, garantindo a qualidade e eficiência do software."
-    },
-    {
-      icon: <FaLightbulb />,
-      description: "Disposição contínua para aprender e evoluir, mantendo-se atualizado com as últimas tendências tecnológicas."
-    },
-    {
-      icon: <FaUsers />,
-      description: "Capacidade de colaborar efetivamente em equipe e promover um ambiente de trabalho produtivo."
-    }
-  ];
+  const { t } = useTranslation();
 
   const socialMedia = [
     {
@@ -85,61 +29,114 @@ function Content() {
       link: "https://wa.me/5531985791710"
     },
   ]
+ 
+  const languages = [
+    {
+      icon: <FaReact />,
+      description: t('languages.0')
+    },
+    {
+      icon: <FaNode />,
+      description: t('languages.1')
+    },
+    {
+      icon: <BiLogoTypescript />,
+      description: t('languages.2')
+    },
+    {
+      icon: <MdOutlinePhp />,
+      description: t('languages.3')
+    },
+    {
+      icon: <FaDatabase />,
+      description: t('languages.4')
+    }
+  ];
+
+  const softSkills = [
+    {
+      icon: <FaBrain />,
+      description: t('softSkillsArr.0')
+    },
+    {
+      icon: <FaCogs />,
+      description: t('softSkillsArr.1')
+    },
+    {
+      icon: <FaHandshake />,
+      description: t('softSkillsArr.2')
+    },
+    {
+      icon: <FaChartLine />,
+      description: t('softSkillsArr.3')
+    },
+    {
+      icon: <FaProjectDiagram />,
+      description: t('softSkillsArr.4')
+    },
+    {
+      icon: <FaTools />,
+      description: t('softSkillsArr.5')
+    },
+    {
+      icon: <FaLightbulb />,
+      description: t('softSkillsArr.6')
+    },
+    {
+      icon: <FaUsers />,
+      description: t('softSkillsArr.7')
+    }
+  ];
 
   const contact = [
     {
       icon: <IoMdMail />,
-      description: "viniciuscgoncalves@hotmail.com",
+      description: t('contactDetails.0'),
       link: undefined
     },
     {
       icon: <FaPhone />,
-      description: "(31) 985791710",
+      description: t('contactDetails.1'),
       link: undefined
     },
     {
       icon: <IoIosPaper />,
-      description: "clique para abrir meu currículo em pdf",
+      description: t('contactDetails.2'),
       link: pdf
-    },
-  ]
-  
+    }
+  ];
+
   const experience = [
     {
-      icon: <img src={logo} />,
+      icon: <img src={logo} alt="Company logo" />,
       level: "4MTI",
-      description: "Desenvolvedor PHP, SQL. Responsavel por criar codigo para coleta de dados em php, Aquisição de informações de arquivos (HTML, JSON, PDF, entre outros) Gerenciamento de banco de dados SQL",
-    },
+      description: t('jobExperience.0')
+    }
   ]
 
   return (
     <div className='flex flex-col gap-6'>
       <div id='home' className='flex max-lg:flex-col gap-6 justify-center items-center'>
         <div>
-          <span className='font-light'>Olá, meu nome é Vinicius,</span>
-          <h1 className='font-extrabold max-lg:text-6xl text-7xl'>Full stack <br/> Developer</h1>
+          <span className='font-light'>{t('presentation')}</span>
+          <h1 className='font-extrabold max-lg:text-6xl text-7xl'>Software <br/> Developer</h1>
         </div>
         <img className='max-w-[700px] max-lg:w-[300px] rounded-lg' src={img} />
       </div>
 
       <div>
         <div className='flex gap-5 justify-center items-center'>
-          <h1 id='about' className='font-extrabold text-3xl'>Sobre</h1>
+          <h1 id='about' className='font-extrabold text-3xl'>{t('about')}</h1>
           <hr className='w-full'/>
         </div>
         <div className='flex py-10 justify-center text-center'>
-          <p className='max-w-7xl'>Olá, meu nome é Vinicius Carneiro Gonçalves. Tenho 22 anos e estou cursando Análise e Desenvolvimento de Sistemas. 
-          Sou um desenvolvedor full stack apaixonado por tecnologia e inovação. Tenho experiência na criação de APIs e na elaboração de interfaces 
-          front-end sofisticadas. Acredito que a tecnologia tem o poder de transformar o mundo e estou sempre buscando novas maneiras de contribuir para isso. 
-          Estou constantemente aprendendo e aprimorando minhas habilidades para me manter atualizado com as últimas tendências e tecnologias. 
-          Adoro os desafios que a programação apresenta e a satisfação de resolver problemas complexos. Estou ansioso para continuar minha jornada 
-          no mundo da tecnologia e ver onde ela me levará.</p>
+          <p className='max-w-7xl'>{t('summary')}</p>
         </div>
       </div>
 
       <div>
         <div className='flex justify-center items-center'>
-          <h1 id='experience' className='font-extrabold text-3xl'>Experiência</h1>
+          <h1 id='experience' className='font-extrabold text-3xl'>{t('experience')}</h1>
           <hr className='w-full'/>
         </div>
         <div className='flex gap-5 flex-col items-center'>
@@ -157,12 +154,12 @@ function Content() {
 
       <div className='flex flex-col'>
         <div className='flex gap-5 justify-center items-center'>
-          <h1 id='skills' className='font-extrabold text-3xl'>Habilidades</h1>
+          <h1 id='skills' className='font-extrabold text-3xl'>{t('skills')}</h1>
           <hr className='w-full'/>
         </div>
         <div className='py-10 flex flex-col gap-20'>
           <div className='flex gap-10 flex-col items-center'>
-            <h2 className='text-xl'>Programação:</h2>
+            <h2 className='text-xl'>{t('skillsProgramming')}</h2>
             <div className='grid gap-6 text-center md:grid-cols-2 lg:grid-cols-4'>
               {languages.map(item => (
                 <div className='flex flex-col items-center'>
@@ -173,7 +170,7 @@ function Content() {
             </div>
           </div>
           <div className='flex gap-5 flex-col items-center'>
-            <h2 className='text-xl'>Habilidades interpessoais:</h2>
+            <h2 className='text-xl'>{t('softSkills')}</h2>
             <div className='grid gap-6 md:grid-cols-2 text-center lg:grid-cols-4'>
               {softSkills.map(item => (
                 <div className='flex flex-col items-center'>
@@ -186,7 +183,7 @@ function Content() {
         </div>
         <div>
           <div className='flex justify-center items-center'>
-            <h1 id='socialMedia' className='font-extrabold text-3xl'>Redes</h1>
+            <h1 id='socialMedia' className='font-extrabold text-3xl'>{t('medias')}</h1>
             <hr className='w-full'/>
           </div>
           <div className='flex gap-5 flex-col items-center'>
@@ -195,7 +192,7 @@ function Content() {
                 <a href={item.link} target='_blank'>
                   <div className='flex flex-col items-center gap-2'>
                     <span className='text-6xl'>{item.icon}</span>
-                    <p className='font-extralight text-xs'>Clique para ser redirecionado</p>
+                    <p className='font-extralight text-xs'>{t('click')}</p>
                   </div>
                 </a>
               ))}
@@ -206,7 +203,7 @@ function Content() {
 
       <div>
         <div className='flex justify-center items-center'>
-          <h1 id='contact' className='font-extrabold text-3xl'>Contatos</h1>
+          <h1 id='contact' className='font-extrabold text-3xl'>{t('contact')}</h1>
           <hr className='w-full'/>
         </div>
         <div className='flex gap-5 flex-col items-center'>
